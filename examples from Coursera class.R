@@ -1,4 +1,4 @@
-con <- url("http://www.daringfireball.net", "rt") #using R to read text from webpages
+con <- url("http://www.daringfireball.net/projects/", "rt") #using R to read text from webpages
 x <- readLines(con)
 head(x)
 x
@@ -55,3 +55,39 @@ oddities <- function(w){           #using next command in loop
   
   
 }
+
+
+dalist <- c("a", "b", "c", "d")  #subsetting a list
+dalist[1]
+dalist[[3]]
+
+
+seclist <- list(dub = 2.2, city = 1:4, recs = "vinyl")
+seclist$dub
+seclist$city
+seclist[[2]][[3]]
+
+
+trilist <- c(1, 4, 5, NA, 6, NA, 8, 9, NA)  #removing NA values from vector using subsetting. 
+bad <- is.na(trilist)
+trilist[!bad]
+
+
+quadlist <- c("a", NA, NA, "b", "c", "d", "e", NA, NA)   #using complete cases to find out which positions(columns) dont have missing values in any row
+bothgood <- complete.cases(trilist, quadlist)
+bothgood
+trilist[bothgood]
+quadlist[bothgood]
+
+
+ab <- 1:4; cd <- 34:37   #vectorized operations 
+ab + cd
+ab*cd
+ab > 2
+cd > 35
+
+
+hw1 <- read.csv("P:/hw1_data.csv", header=TRUE, sep=",") #example of filtering data frame based on conditions in 2 columns and then taking averave of a third column, while omitting NA values in that third column 
+hw1[hw1$Ozone > 31 & hw1$Temp > 90,]
+mean(hw1$Solar.R, na.rm = TRUE)
+
