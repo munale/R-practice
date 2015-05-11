@@ -91,3 +91,41 @@ hw1 <- read.csv("P:/hw1_data.csv", header=TRUE, sep=",") #example of filtering d
 hw1[hw1$Ozone > 31 & hw1$Temp > 90,]
 mean(hw1$Solar.R, na.rm = TRUE)
 
+
+
+
+x<- list(a= 1:45, b = rnorm(10), c = 6:60)
+lapply(x, mean)
+
+y <- 1:4
+lapply(y, runif)
+
+sapply(x, mean)
+
+z <- matrix(rnorm(140), 14,10)
+apply(z, 1, mean)
+apply(z, 2, mean)
+apply(z, 1, quantile, probs = c(.25, .5, .75))
+
+L1 <- list(1,2,3,4,5)
+L2 <- list(5,4,3,2,1)
+mapply(max, L1, L2)
+
+
+d <- c(rnorm(20), runif(20), rnorm(20,6))
+e <- gl(3, 20)
+e
+tapply(d, e, mean)
+tapply(d, e, range)
+split(d, e)
+
+library(datasets)
+airs <- split(airquality, airquality$Month)
+lapply(airs, colMeans)
+sapply(airs, colMeans)
+sapply(airs, colMeans, na.rm = TRUE)
+
+
+
+
+
