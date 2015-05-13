@@ -126,6 +126,17 @@ sapply(airs, colMeans)
 sapply(airs, colMeans, na.rm = TRUE)
 
 
+str(airs)
+
+
+rnorm(19)
+rpois(4)
+
+sample(1:10, 4)
+sample(1:10, 6)
+sample(letters, 6)
+sample(1:10, 2, replace=TRUE)
+
 
 
 
