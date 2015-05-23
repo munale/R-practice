@@ -180,7 +180,13 @@ colSums()
 rowSums()
 table(var %in% c(123))
 DF[DF$var %in% c(123),]
-xt <- xtabs(Freq ~ var1 +var2, data=DF)
+xt <- xtabs(numvar ~ var1 +var2, data=DF) # only works for all numeric variables
 try creating new variables based on a condtion. df$new var = ifelse(df$old > 0, true, false)
 melt()
 dcast(df, id ~ variable)
+
+
+
+
+
+
